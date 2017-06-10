@@ -1,6 +1,6 @@
 # Overview
 
-This version of the code includes the basic relation learning model and the importance-guided mapping algorithm for solving analogy problems. Code for the distance effect and the extra simulations involving test items that go beyond the training data in various ways (e.g., containing
+This is the code and data for "Bayesian analogy with relational transformations" (Lu, Chen, & Holyoak, 2012, Psych Review). You can get the paper [here](https://www.researchgate.net/publication/229008392_Bayesian_Analogy_With_Relational_Transformations). This version of the code includes the basic relation learning model and the importance-guided mapping algorithm for solving analogy problems. Code for the distance effect and the extra simulations involving test items that go beyond the training data in various ways (e.g., containing
 different animals) are not included.
 
 
@@ -20,7 +20,7 @@ The following three files are the main programs to run to test the model:
 
 Some info about the other files:
 
-`data\*.mat` files: Input files for ratings, Leuven, and topics.
+`data*.mat` files: Input files for ratings, Leuven, and topics.
 
 `learn_all_predicates.m`: Learns representations for the single-place predicates (large, small, etc.).
 
@@ -28,7 +28,7 @@ Some info about the other files:
 
 `evaluate_relation.m`: Evaluates generalization performance on a relation, calculating absolute accuracy, relative accuracy, and Az.
 
-`analogy_test_\*.m`: Tests each type of analogy problem.
+`analogy_test_*.m`: Tests each type of analogy problem.
 
 `analogy_importance_mapping.m`: Uses importance-guided mapping to compute the analogical distance of a single four-term analogy.
 
