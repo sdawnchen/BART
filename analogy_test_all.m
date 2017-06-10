@@ -39,6 +39,10 @@ else
 end
 headings = {'# pos. train pairs', '# neg. train pairs', 'Seed #', 'Model acc'};
 
+analogy_folder = sprintf('results/%s/analogy', input);
+if ~exist(analogy_folder, 'dir')
+    mkdir(analogy_folder)
+end
 
 for num_train_i = 1 : length(num_train_pairs_pos_vec)
     num_train_pairs_pos = num_train_pairs_pos_vec(num_train_i);

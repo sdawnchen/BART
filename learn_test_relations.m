@@ -13,7 +13,7 @@
 % The generalization results are saved in the
 % results/<input>/generalization folder, and the resulting relational
 % representations are saved in the results/<input>/matrices folder (see
-% the DIRECTORY STRUCTURE section in README.txt for more details).
+% the DIRECTORY STRUCTURE section in README.md for more details).
 
 
 function [] = learn_test_relations(input, BART, learn_lesser, num_train_pairs_pos)
@@ -81,15 +81,31 @@ b0 = 1;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 if BART
-    results_file = sprintf('results/%s/generalization/BART/%s_BART_lesser%d_train%dpos_%dneg.xls', ...
-        input, input, learn_lesser, num_train_pairs_pos, num_train_pairs_neg);
+    results_folder = sprintf('results/%s/generalization/BART', input);
+    results_file = sprintf('%s/%s_BART_lesser%d_train%dpos_%dneg.xls', ...
+        results_folder, input, learn_lesser, num_train_pairs_pos, num_train_pairs_neg);
     rel_matfolder = sprintf('results/%s/matrices/relations/BART/', input);
 else
-    results_file = sprintf('results/%s/generalization/baseline/%s_baseline_lesser%d_train%dpos_%dneg.xls', ...
-        input, input, learn_lesser, num_train_pairs_pos, num_train_pairs_neg);
+    results_folder = sprintf('results/%s/generalization/baseline', input);
+    results_file = sprintf('%s/%s_baseline_lesser%d_train%dpos_%dneg.xls', ...
+        results_folder, input, learn_lesser, num_train_pairs_pos, num_train_pairs_neg);
     rel_matfolder = sprintf('results/%s/matrices/relations/baseline/', input);
 end
 pred_matfolder = sprintf('results/%s/matrices/predicates/', input);
+
+% Create all the necessary directories
+if ~exist(results_folder, 'dir')
+    mkdir(results_folder);
+end
+    
+if ~exist(rel_matfolder, 'dir')
+    mkdir(rel_matfolder);
+end
+
+if ~exist(pred_matfolder, 'dir')
+    mkdir(pred_matfolder);
+end
+
 headings = {'Seed #', 'a0', 'b0', 'Final iter', '# pairs tested', 'Abs acc', 'Rel acc', 'Az'};
 
 
