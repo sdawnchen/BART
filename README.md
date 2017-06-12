@@ -1,6 +1,6 @@
 # Overview
 
-This is the code and data for "Bayesian analogy with relational transformations" (Lu, Chen, & Holyoak, 2012, Psych Review). You can get the paper [here](https://www.researchgate.net/publication/229008392_Bayesian_Analogy_With_Relational_Transformations). This version of the code includes the basic relation learning model and the importance-guided mapping algorithm for solving analogy problems. Code for the distance effect and the extra simulations involving test items that go beyond the training data in various ways (e.g., containing
+This is the code and data for "Bayesian analogy with relational transformations" (Lu, Chen, & Holyoak, 2012, *Psych Review*). You can read the paper [here](https://www.researchgate.net/publication/229008392_Bayesian_Analogy_With_Relational_Transformations). This version of the code includes the basic relation learning model and the importance-guided mapping algorithm for solving analogy problems. Code for the distance effect and the extra simulations involving test items that go beyond the training data in various ways (e.g., containing
 different animals) are not included.
 
 
